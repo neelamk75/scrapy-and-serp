@@ -9,6 +9,9 @@ from custom_search import GoogleSerperAPIWrapper
 import hashlib
 
 
+OUTPUT_FOLDER = "text_output"
+
+
 google_serper = GoogleSerperAPIWrapper()
 
 
@@ -23,7 +26,7 @@ class MySpider(scrapy.Spider):
         self.query = query
         self.start_time = time.time()
         self.query_hash = hashlib.sha256(query.encode()).hexdigest()
-        self.output_file = f"{self.query_hash}.md" 
+        self.output_file = f"{OUTPUT_FOLDER}/{self.query_hash}.md" 
 
 
     def start_requests(self):
