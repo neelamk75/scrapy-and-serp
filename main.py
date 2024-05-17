@@ -10,6 +10,7 @@ raptor_pack = RaptorPack()
 
 @defer.inlineCallbacks
 def run_spiders():
+    # Add queries here
     queries = ["tax deduction 2024", "what is the difference between filing taxes late and not filing taxes at all?",
                "What's the difference between a Form W-2 and a Form 1099-MISC or Form 1099-NEC?"]
     for query in queries:
