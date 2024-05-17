@@ -1,3 +1,7 @@
 scrapy
 langchain
 google-api-python-client
+llama_index
+tiktoken
+umap-learn
+scikit-learn

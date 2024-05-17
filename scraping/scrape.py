@@ -1,11 +1,8 @@
 import scrapy
-from twisted.internet import reactor, defer
-from scrapy.crawler import CrawlerRunner
-from scrapy.utils.log import configure_logging
 from bs4 import BeautifulSoup
 import time
 import io
-from custom_search import GoogleSerperAPIWrapper
+from scraping.custom_search import GoogleSerperAPIWrapper
 import hashlib
 
 
@@ -62,19 +59,4 @@ class MySpider(scrapy.Spider):
         print(f"Total time taken: {elapsed_time} seconds")
 
 
-configure_logging()
-runner = CrawlerRunner()
 
-
-@defer.inlineCallbacks
-def run_spiders():
-    queries = ["tax deduction 2024", "what is the difference between filing taxes late and not filing taxes at all?", \
-               "What's the difference between a Form W-2 and a Form 1099-MISC or Form 1099-NEC?"]
-    for query in queries:
-        spider = MySpider(query)
-        yield runner.crawl(MySpider, query=query)
-    reactor.stop()
-
-
-run_spiders()
-reactor.run()
