@@ -2,4 +2,4 @@
 
 ## A simple system that obtains links from serp api and scrapes the links using scrapy
 
-## RUN scrape.py 
+## RUN main.py 
